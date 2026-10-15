@@ -1,0 +1,348 @@
+﻿<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Piazzetta – Opzione A “Mattoni”</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+:root{
+  --slate:#364c57; --slate-dark:#26363e; --brick:#eb6c39; --brick-dark:#d94e31;
+  --yellow:#f9be62; --sage:#8fb39a; --cream:#f7f2ea; --ink:#1f2a30; --muted:#5d6b72; --line:#e6e0d6;
+  --radius:14px; --max:1200px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Nunito,system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.6;font-size:17px}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.hand{font-family:"Patrick Hand",cursive;font-weight:400}
+.kicker{font-weight:900;letter-spacing:.14em;text-transform:uppercase;font-size:.8rem;color:var(--brick)}
+h1,h2,h3{line-height:1.15;margin:0 0 .5em;font-weight:900}
+h2{font-size:clamp(1.8rem,3.4vw,2.6rem)}
+.btn{display:inline-flex;align-items:center;gap:.5em;padding:.85em 1.5em;border-radius:999px;font-weight:800;text-decoration:none;border:2px solid transparent;cursor:pointer;font-size:1rem;font-family:inherit;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-brick{background:var(--brick);color:#fff}
+.btn-brick:hover{background:var(--brick-dark)}
+.btn-ghost{border-color:currentColor;color:#fff;background:transparent}
+.link-more{font-weight:800;color:var(--brick);text-decoration:none}
+.link-more:hover{text-decoration:underline}
+
+/* header */
+.site-header{position:fixed;inset:0 0 auto;z-index:50;transition:background .25s,box-shadow .25s;color:#fff}
+.site-header.is-scrolled{background:#fff;color:var(--ink);box-shadow:0 2px 18px rgba(0,0,0,.08)}
+.nav{display:flex;align-items:center;gap:28px;height:84px}
+.logo{height:52px;width:auto;color:currentColor}
+.menu{display:flex;gap:26px;list-style:none;margin:0 0 0 auto;padding:0;font-weight:800;font-size:.98rem}
+.menu > li{position:relative}
+.menu a{text-decoration:none;padding:8px 0;display:block}
+.menu a:hover{color:var(--brick)}
+.sub{position:absolute;top:100%;left:-18px;background:#fff;color:var(--ink);list-style:none;padding:12px 0;margin:0;min-width:250px;border-radius:12px;box-shadow:0 14px 40px rgba(0,0,0,.14);opacity:0;visibility:hidden;transform:translateY(6px);transition:.18s}
+.sub a{padding:8px 20px;font-weight:700}
+.menu > li:hover .sub,.menu > li:focus-within .sub{opacity:1;visibility:visible;transform:none}
+.icon-btn{background:none;border:0;color:inherit;cursor:pointer;padding:6px}
+.menu-toggle{display:none}
+
+/* hero */
+.hero{position:relative;min-height:min(100vh,860px);display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(38,54,62,.85) 0%,rgba(38,54,62,.35) 60%,rgba(38,54,62,.1) 100%),linear-gradient(180deg,rgba(38,54,62,.5) 0%,transparent 25%)}
+.hero .wrap{position:relative;z-index:2;padding-bottom:120px;width:100%}
+.hero h1{font-size:clamp(2.6rem,6vw,4.8rem);max-width:16ch;letter-spacing:-.01em}
+.hero h1 .hand{color:var(--yellow);font-size:1.12em}
+.hero p{font-size:1.2rem;max-width:56ch;opacity:.95;margin:0 0 1.6em}
+.hero .actions{display:flex;gap:14px;flex-wrap:wrap}
+.scroll-cue{position:absolute;z-index:2;left:50%;bottom:28px;transform:translateX(-50%);width:26px;height:42px;border:2px solid #fff;border-radius:14px;opacity:.8}
+.scroll-cue::after{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:#fff;animation:cue 1.6s infinite}
+@keyframes cue{to{transform:translateY(12px);opacity:0}}
+
+/* striscia promo */
+.promo{display:grid;grid-template-columns:repeat(3,1fr);position:relative;z-index:3;margin-top:-56px}
+.promo a{display:flex;gap:16px;align-items:center;padding:26px 28px;text-decoration:none;color:#fff;min-height:112px;transition:filter .15s}
+.promo a:hover{filter:brightness(1.08)}
+.promo a:nth-child(1){background:var(--brick);border-radius:var(--radius) 0 0 var(--radius)}
+.promo a:nth-child(2){background:var(--slate)}
+.promo a:nth-child(3){background:var(--slate-dark);border-radius:0 var(--radius) var(--radius) 0}
+.promo strong{display:block;font-size:1.15rem;font-weight:900}
+.promo span{font-size:.92rem;opacity:.9}
+.promo svg{flex:none}
+
+section{padding:96px 0}
+.center{text-align:center}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:36px;flex-wrap:wrap}
+
+/* numeri */
+.stats-banner{font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);font-size:clamp(1.1rem,2.4vw,1.6rem);margin-bottom:48px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.stat{background:var(--cream);border-radius:var(--radius);padding:34px 26px;text-align:left;position:relative;overflow:hidden}
+.stat::before{content:"";position:absolute;right:-18px;top:18px;width:70px;height:26px;border-radius:4px;background:var(--brick);opacity:.14;box-shadow:-38px 32px 0 var(--brick)}
+.stat .num{font-size:3.2rem;font-weight:900;color:var(--brick);line-height:1}
+.stat .num small{font-size:.5em}
+.stat p{margin:.6em 0 0;color:var(--muted);font-weight:600}
+
+/* caroselli */
+.carousel-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 48px)/3);gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:6px}
+.carousel-track::-webkit-scrollbar{display:none}
+.carousel-track > *{scroll-snap-align:start}
+.arrows{display:flex;gap:10px}
+.arrows button{width:48px;height:48px;border-radius:50%;border:2px solid var(--slate);background:#fff;color:var(--slate);cursor:pointer;font-size:1.2rem}
+.arrows button:hover{background:var(--slate);color:#fff}
+.story{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
+.story img{aspect-ratio:4/3;object-fit:cover;object-position:top}
+.story div{padding:22px 24px 26px;display:flex;flex-direction:column;gap:8px;flex:1}
+.story h3{font-size:1.25rem;margin:0}
+.story p{margin:0;color:var(--muted);flex:1}
+.tag{align-self:flex-start;font-size:.75rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em;background:var(--cream);color:var(--slate);padding:4px 10px;border-radius:999px}
+
+/* donazione */
+.donate{background:var(--slate) url(img/pattern.jpg) repeat;background-size:350px;color:#fff;position:relative}
+.donate::before{content:"";position:absolute;inset:0;background:rgba(38,54,62,.88)}
+.donate .wrap{position:relative;display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+.donate h2 .hand{color:var(--yellow)}
+.donate-card{background:#fff;color:var(--ink);border-radius:20px;padding:34px}
+.amounts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+.amounts button{padding:16px 0;border-radius:12px;border:2px solid var(--line);background:#fff;font:900 1.3rem Nunito,sans-serif;color:var(--slate);cursor:pointer}
+.amounts button[aria-pressed=true]{border-color:var(--brick);background:#fff4ee;color:var(--brick)}
+.iban{display:flex;gap:10px;align-items:center;background:var(--cream);border-radius:12px;padding:12px 14px;margin:14px 0;font-family:ui-monospace,Consolas,monospace;font-size:.92rem;flex-wrap:wrap}
+.iban code{flex:1;word-break:break-all}
+.copy{border:0;background:var(--slate);color:#fff;border-radius:8px;padding:6px 12px;font:700 .85rem Nunito,sans-serif;cursor:pointer}
+.pay{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;font-size:.8rem;color:var(--muted)}
+.pay span{border:1px solid var(--line);border-radius:6px;padding:4px 10px;font-weight:700}
+
+/* news */
+.news-card{border-top:4px solid var(--brick);background:var(--cream);border-radius:0 0 var(--radius) var(--radius);padding:24px;text-decoration:none;display:flex;flex-direction:column;gap:10px;min-height:220px}
+.news-card time{font-weight:800;color:var(--brick);font-size:.9rem}
+.news-card h3{font-size:1.2rem;margin:0;flex:1}
+.news-card:hover h3{text-decoration:underline}
+
+/* contatto */
+.stay{background:var(--cream)}
+.stay .wrap{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap}
+.stay h2{margin:0}
+
+/* cosa facciamo */
+.areas{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.area{position:relative;border-radius:var(--radius);overflow:hidden;min-height:440px;display:flex;align-items:flex-end;color:#fff;text-decoration:none}
+.area img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.area:hover img{transform:scale(1.05)}
+.area::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(31,42,48,.9))}
+.area div{position:relative;z-index:2;padding:28px}
+.area h3{font-size:1.5rem}
+.area p{margin:0 0 12px;opacity:.92}
+.area .link-more{color:var(--yellow)}
+
+.cta-end{background:var(--brick);color:#fff;text-align:center;padding:70px 0}
+.cta-end h2{font-size:clamp(1.6rem,3vw,2.3rem)}
+.cta-end .btn{background:#fff;color:var(--brick)}
+
+/* footer */
+footer{background:var(--slate-dark);color:#cfd8dc;padding:70px 0 30px;font-size:.95rem}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+footer h4{color:#fff;margin:0 0 14px;font-size:1rem}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+footer a{text-decoration:none}
+footer a:hover{color:var(--yellow)}
+footer .logo{color:#fff;height:58px;margin-bottom:16px}
+.legal{border-top:1px solid rgba(255,255,255,.12);margin-top:50px;padding-top:24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.85rem}
+.social{display:flex;gap:10px;margin-top:16px}
+.social a{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+
+/* mobile */
+@media (max-width:980px){
+  .menu,.nav .btn-brick,.nav .icon-btn.search{display:none}
+  .menu-toggle{display:block;margin-left:auto}
+  body.menu-open .menu{display:flex;flex-direction:column;position:fixed;inset:84px 0 0;background:#fff;color:var(--ink);padding:24px;gap:6px;overflow:auto;margin:0}
+  body.menu-open .sub{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;padding:0 0 8px}
+  body.menu-open .site-header{background:#fff;color:var(--ink)}
+  .promo{grid-template-columns:1fr;margin-top:0}
+  .promo a{border-radius:0!important}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .carousel-track{grid-auto-columns:80%}
+  .donate .wrap{grid-template-columns:1fr}
+  .areas{grid-template-columns:1fr}
+  .area{min-height:340px}
+  footer .cols{grid-template-columns:1fr 1fr}
+  section{padding:70px 0}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .stats{grid-template-columns:1fr}
+  footer .cols{grid-template-columns:1fr}
+  .hero .wrap{padding-bottom:90px}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo" viewBox="0 0 236 60">
+    <rect x="0" y="6" width="20" height="11" rx="2" fill="#eb6c39"/><rect x="23" y="6" width="20" height="11" rx="2" fill="#e85937"/>
+    <rect x="0" y="20" width="12" height="11" rx="2" fill="#d94e31"/><rect x="15" y="20" width="13" height="11" rx="2" fill="#eb6c39"/><rect x="31" y="20" width="12" height="11" rx="2" fill="#e85937"/>
+    <rect x="5" y="34" width="15" height="11" rx="2" fill="#e85937"/><rect x="23" y="34" width="15" height="11" rx="2" fill="#d94e31"/>
+    <text x="54" y="33" font-family="Patrick Hand" font-size="32" fill="currentColor">La Piazzetta</text>
+    <text x="56" y="51" font-family="Nunito" font-weight="800" font-size="10.5" letter-spacing="2.6" fill="currentColor" opacity=".8">OLTRE IL MURO</text>
+  </symbol>
+</svg>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="#" aria-label="La Piazzetta – home"><svg class="logo" viewBox="0 0 236 60"><use href="#logo"/></svg></a>
+    <ul class="menu">
+      <li><a href="#chi-siamo">Chi siamo</a>
+        <ul class="sub"><li><a href="#">La nostra storia</a></li><li><a href="#">Associazione e Cooperativa</a></li><li><a href="#">Dove siamo</a></li><li><a href="#">Trasparenza e bilancio sociale</a></li></ul></li>
+      <li><a href="#cosa-facciamo">Cosa facciamo</a>
+        <ul class="sub"><li><a href="#">Centro Incontro e Doposcuola</a></li><li><a href="#">Laboratorio teatrale</a></li><li><a href="#">Torneo Oltre il Muro</a></li><li><a href="#">Servizio Civile</a></li></ul></li>
+      <li><a href="#sostienici">Cosa puoi fare tu</a>
+        <ul class="sub"><li><a href="#">Fai una donazione</a></li><li><a href="#">Dona il tuo 5×1000</a></li><li><a href="#">Diventa volontario</a></li><li><a href="#">Partecipa ai nostri eventi</a></li></ul></li>
+      <li><a href="#news">News e storie</a></li>
+      <li><a href="#contatti">Contatti</a></li>
+    </ul>
+    <button class="icon-btn search" aria-label="Cerca"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button>
+    <a class="btn btn-brick" href="#sostienici">Dona ora</a>
+    <button class="icon-btn menu-toggle" aria-label="Apri menu" aria-expanded="false"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+  </div>
+</header>
+
+<section class="hero" style="padding:0">
+  <img src="img/t12.jpg" alt="I partecipanti al Torneo Oltre il Muro 2026 allo stadio di Giaveno">
+  <div class="wrap">
+    <p class="kicker" style="color:var(--yellow)">Giaveno · Val Sangone · dal 1984</p>
+    <h1>Insieme, <span class="hand">oltre il muro.</span></h1>
+    <p>La Piazzetta è un luogo d'incontro dove ragazzi, volontari ed educatori crescono insieme: doposcuola, laboratori, sport e solidarietà per andare oltre l'indifferenza e l'emarginazione.</p>
+    <div class="actions">
+      <a class="btn btn-brick" href="#cosa-facciamo">Scopri cosa facciamo</a>
+      <a class="btn btn-ghost" href="#sostienici">Sostienici</a>
+    </div>
+  </div>
+  <span class="scroll-cue" aria-hidden="true"></span>
+</section>
+
+<div class="wrap">
+  <nav class="promo" aria-label="In evidenza">
+    <a href="#sostienici"><svg width="38" height="38" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6C19 16.5 12 21 12 21z"/></svg><div><strong>Dona il tuo 5×1000</strong><span>C.F. 95531160018 – a te non costa nulla</span></div></a>
+    <a href="#"><svg width="38" height="38" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.8c1.6.8 2.6 2.5 3 5.2"/></svg><div><strong>Diventa volontario</strong><span>Servizio Civile e volontariato in Piazzetta</span></div></a>
+    <a href="#"><svg width="38" height="38" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3c3 3 3 15 0 18M3.5 9.5c5 1.5 12 1.5 17 0M4 15.5c5-1.5 11-1.5 16 0"/></svg><div><strong>Torneo Oltre il Muro 2026</strong><span>Foto, classifica e regolamento</span></div></a>
+  </nav>
+</div>
+
+<section class="center" id="chi-siamo">
+  <div class="wrap">
+    <div class="stats-banner reveal">Un luogo d'incontro, ogni giorno</div>
+    <div class="stats">
+      <div class="stat reveal"><div class="num"><span data-count="40">40</span><small>+</small></div><p>anni di attività in Val Sangone, dal 1984</p></div>
+      <div class="stat reveal"><div class="num"><span data-count="80">80</span><small>+</small></div><p>ragazzi che frequentano la Piazzetta</p></div>
+      <div class="stat reveal"><div class="num"><span data-count="150">150</span><small>+</small></div><p>persone coinvolte attivamente tra volontari ed educatori</p></div>
+      <div class="stat reveal"><div class="num"><span data-count="29">29</span></div><p>edizioni del Torneo Oltre il Muro</p></div>
+    </div>
+    <p style="margin-top:34px"><a class="link-more" href="#">Scopri chi siamo e il nostro bilancio sociale →</a></p>
+  </div>
+</section>
+
+<section style="background:var(--cream)" id="storie">
+  <div class="wrap" data-carousel>
+    <div class="section-head">
+      <div><p class="kicker">Storie dalla Piazzetta</p><h2>Le persone, prima di tutto</h2></div>
+      <div class="arrows"><button data-prev aria-label="Precedente">←</button><button data-next aria-label="Successivo">→</button></div>
+    </div>
+    <div class="carousel-track">
+      <article class="story"><img src="img/t3.jpg" alt=""><div><span class="tag">Servizio Civile</span><h3>Un salto nel vuoto</h3><p>«Mai avrei pensato che La Piazzetta potesse cambiarmi così nel profondo.» Il racconto di un anno di Servizio Civile.</p><a class="link-more" href="#">Leggi la storia +</a></div></article>
+      <article class="story"><img src="img/teatro.jpg" alt=""><div><span class="tag">Laboratorio teatrale</span><h3>Esserci o non esserci</h3><p>Lo spettacolo nato dal laboratorio teatrale dei ragazzi, in scena al Cinema Teatro San Lorenzo.</p><a class="link-more" href="#">Scopri di più +</a></div></article>
+      <article class="story"><img src="img/40anni.jpg" alt=""><div><span class="tag">Comunità</span><h3>40 anni di Piazzetta</h3><p>Una festa in Piazza Mautino per celebrare quattro decenni di incontri, amicizie e impegno.</p><a class="link-more" href="#">Scopri di più +</a></div></article>
+      <article class="story"><img src="img/t9.jpg" alt=""><div><span class="tag">Servizio Civile</span><h3>Un girotondo di emozioni</h3><p>«Quando entri in Piazzetta ti senti immediatamente accolto, come in una grande famiglia.»</p><a class="link-more" href="#">Leggi la storia +</a></div></article>
+      <article class="story"><img src="img/viaggi.jpg" alt=""><div><span class="tag">Laboratorio teatrale</span><h3>Viaggi 2.0</h3><p>Il racconto in scena del viaggio, tra sogni, valigie e nuove partenze.</p><a class="link-more" href="#">Scopri di più +</a></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="donate" id="sostienici">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="kicker" style="color:var(--yellow)">Sostienici</p>
+      <h2>Ogni dono apre una porta <span class="hand">oltre il muro.</span></h2>
+      <p style="opacity:.9;max-width:48ch">Con il tuo aiuto sosteniamo il doposcuola, i laboratori e le attività educative per i ragazzi della Val Sangone. Anche il tuo 5×1000 fa la differenza: a te non costa nulla.</p>
+      <div class="iban" style="background:rgba(255,255,255,.1);color:#fff"><span>5×1000 · C.F.</span><code>95531160018</code><button class="copy" data-copy="95531160018" style="background:var(--brick)">Copia</button></div>
+    </div>
+    <div class="donate-card reveal">
+      <h3 style="font-size:1.4rem">Fai una donazione</h3>
+      <div class="amounts" data-target="#amount-a">
+        <button data-amount="20" aria-pressed="false">20 €</button>
+        <button data-amount="50" aria-pressed="true">50 €</button>
+        <button data-amount="100" aria-pressed="false">100 €</button>
+      </div>
+      <p style="margin:0;color:var(--muted);font-size:.95rem">Bonifico intestato ad <strong>Associazione La Piazzetta ODV</strong>:</p>
+      <div class="iban"><code>IT50 B020 0830 5200 0010 1048 903</code><button class="copy" data-copy="IT50B0200830520000101048903">Copia</button></div>
+      <a class="btn btn-brick" href="#" style="width:100%;justify-content:center">Dona <span id="amount-a">50 €</span></a>
+      <div class="pay"><span>Bonifico</span><span>Carta*</span><span>PayPal*</span><span>Satispay*</span></div>
+      <p style="font-size:.78rem;color:var(--muted);margin:10px 0 0">* pagamenti online attivabili nella versione definitiva</p>
+    </div>
+  </div>
+</section>
+
+<section id="news">
+  <div class="wrap" data-carousel>
+    <div class="section-head">
+      <div><p class="kicker">News</p><h2>Ultime dalla Piazzetta</h2></div>
+      <div class="arrows"><button data-prev aria-label="Precedente">←</button><button data-next aria-label="Successivo">→</button></div>
+    </div>
+    <div class="carousel-track">
+      <a class="news-card" href="#"><time>26 luglio 2026</time><h3>Foto Torneo Oltre il Muro 2026</h3><span class="link-more">Leggi +</span></a>
+      <a class="news-card" href="#"><time>28 maggio 2026</time><h3>Torneo Oltre il Muro 2026: 29ª edizione</h3><span class="link-more">Leggi +</span></a>
+      <a class="news-card" href="#"><time>14 aprile 2026</time><h3>Spettacolo teatrale “Esserci o non esserci”</h3><span class="link-more">Leggi +</span></a>
+      <a class="news-card" href="#"><time>16 dicembre 2025</time><h3>Un voto, 200.000 aiuti concreti</h3><span class="link-more">Leggi +</span></a>
+      <a class="news-card" href="#"><time>31 ottobre 2025</time><h3>Cena una volta, Bagna Cauda d'asporto!</h3><span class="link-more">Leggi +</span></a>
+    </div>
+    <p style="margin-top:28px"><a class="link-more" href="#">Tutte le notizie →</a></p>
+  </div>
+</section>
+
+<section class="stay" style="padding:60px 0">
+  <div class="wrap">
+    <div><p class="kicker">Resta in contatto</p><h2>Segui la vita della Piazzetta</h2></div>
+    <a class="btn btn-brick" href="#">Seguici su Facebook</a>
+  </div>
+</section>
+
+<section id="cosa-facciamo">
+  <div class="wrap">
+    <div class="section-head"><div><p class="kicker">Cosa facciamo</p><h2>Tre modi per andare oltre il muro</h2></div></div>
+    <div class="areas">
+      <a class="area reveal" href="#"><img src="img/t3.jpg" alt=""><div><h3>Centro Incontro e Doposcuola</h3><p>Dal lunedì al venerdì: studio, recupero didattico e attività educative per 40–45 ragazzi delle medie e superiori.</p><span class="link-more">Scopri +</span></div></a>
+      <a class="area reveal" href="#"><img src="img/teatro.jpg" alt="" style="object-position:top"><div><h3>Laboratori e teatro</h3><p>Il laboratorio teatrale e le attività creative, fino allo spettacolo di fine anno.</p><span class="link-more">Scopri +</span></div></a>
+      <a class="area reveal" href="#"><img src="img/t5.jpg" alt=""><div><h3>Sport ed eventi</h3><p>Il Torneo Oltre il Muro, la Cena una volta e le feste che fanno comunità.</p><span class="link-more">Scopri +</span></div></a>
+    </div>
+  </div>
+</section>
+
+<div class="cta-end">
+  <div class="wrap">
+    <h2>Anche tu puoi fare la differenza.</h2>
+    <a class="btn" href="#sostienici">Scopri come aiutarci</a>
+  </div>
+</div>
+
+<footer id="contatti">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <svg class="logo" viewBox="0 0 236 60"><use href="#logo"/></svg>
+        <p>Associazione La Piazzetta ODV<br>Cooperativa La Piazzetta s.c.s.<br>Via Don Pogolotto 39 – 10094 Giaveno (TO)<br>C.F. 95531160018</p>
+      </div>
+      <div><h4>Contatti</h4><ul><li><a href="tel:+390119378078">011 937 8078</a></li><li><a href="tel:+393347271524">334 727 1524</a></li><li><a href="mailto:associazione@lapiazzetta.org">associazione@lapiazzetta.org</a></li><li><a href="mailto:cooperativa@lapiazzetta.org">cooperativa@lapiazzetta.org</a></li></ul>
+        <div class="social"><a href="#" aria-label="Facebook"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v9h4v-9h3l.5-4h-3.5V8.8c0-.5.3-.8.5-.8z"/></svg></a><a href="#" aria-label="Instagram"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a></div></div>
+      <div><h4>Esplora</h4><ul><li><a href="#">Chi siamo</a></li><li><a href="#">Cosa facciamo</a></li><li><a href="#">News e storie</a></li><li><a href="#">Itinerari della Resistenza</a></li></ul></div>
+      <div><h4>Trasparenza</h4><ul><li><a href="#">Bilancio sociale</a></li><li><a href="#">Contributi pubblici ricevuti</a></li><li><a href="#">Privacy policy</a></li><li><a href="#">Cookie policy</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Associazione La Piazzetta ODV</span><span>PEC: associazionelapiazzetta@arubapec.it</span></div>
+  </div>
+</footer>
+
+<script src="proto.js"></script>
+</body>
+</html>
